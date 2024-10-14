@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Device Redirect</title>
+    <style>
+        /* 중앙 정렬 및 스타일 설정 */
+        .container {
+            text-align: center;
+            margin-top: 20%;
+        }
+        .logo {
+            margin-top: 20px;
+        }
+        .footer {
+            position: fixed;
+            bottom: 10px;
+            width: 100%;
+            text-align: center;
+        }
+    </style>
+    <script>
+        // 사용자의 User-Agent를 확인하여 모바일 여부를 판단합니다.
+        function redirectToDevice() {
+            var isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+            setTimeout(function() {
+                if (isMobile) {
+                    // 모바일 기기의 경우 example1.com으로 리다이렉트
+                    window.location.href = "https://handon135.github.io/Haha-mobile/";
+                } else {
+                    // PC의 경우 example2.com으로 리다이렉트
+                    window.location.href = "https://handon135.github.io/HA123/";
+                }
+            }, 4000); // 4초 후에 리다이렉트
+        }
+
+        // 페이지 로드 시 리다이렉트 함수 호출
+        window.onload = redirectToDevice;
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Iris Speed Test 이동 중...</h1>
+    </div>
+    <div class="footer">
+        <p>Hosting by GitHub</p>
+        <img class="logo" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub Logo" width="50">
+    </div>
+</body>
+</html>
